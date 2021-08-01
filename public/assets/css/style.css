@@ -1,0 +1,703 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.bg-base {
+    background-color: rgb(0, 60, 80) !important;
+    min-height: 100vh !important;
+}
+
+/* ================================================================ start home page ==================================================== */
+
+.carousel {
+    position: relative;
+}
+.landed-img {
+    max-height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.overlay {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(17, 17, 17, 0.4);
+}
+
+.carousel-inner .carousel-item h1 {
+    font-size: 70px;
+    font-weight: 900;
+    opacity: 0;
+    transform: scale(0.1);
+    animation-name: show;
+    animation-duration: 800ms;
+    animation-delay: 300ms;
+    animation-fill-mode: both;
+}
+
+header .carousel-inner .carousel-item p {
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: scale(0.1);
+    animation-name: show;
+    animation-duration: 800ms;
+    animation-delay: 700ms;
+    animation-fill-mode: both;
+}
+
+header .carousel-inner .carousel-item a {
+    background-color: transparent;
+    text-decoration: none;
+    padding: 15px 30px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-right: 10px;
+    display: inline-block;
+    transition: transform 1s ease-out;
+    opacity: 0;
+    transform: scale(0.1);
+    animation-name: show;
+    animation-duration: 900ms;
+    animation-delay: 1s;
+    animation-fill-mode: both;
+}
+
+.arrow-position {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    top: 45%;
+}
+
+header .carousel-inner .carousel-item a:hover .bt {
+    transform: translateY(-5px);
+}
+
+header .carousel-inner .carousel-item a:first-of-type {
+    background-color: #00c3da;
+    border: none;
+}
+
+header .carousel-inner .carousel-item a:last-of-type {
+    background-color: transparent;
+}
+
+header .carousel-inner .carousel-item a:last-of-type:hover {
+    background-color: #fff;
+    color: rgb(5, 111, 146) !important;
+}
+
+.carousel .arrow {
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+header .carousel-control-next {
+    left: 0;
+    top: 59px;
+}
+
+.arrow-hover {
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    position: absolute;
+    transform: translate(-60px, 0);
+    transition: all 0.3s ease-in-out;
+}
+
+.carousel-control-prev:hover .arrow-hover-prev,
+.carousel-control-next:hover .arrow-hover-next {
+    transform: translateX(0);
+}
+
+.carousel-control-prev:hover .fas,
+.carousel-control-next:hover .fas {
+    z-index: 55555555;
+    color: #ccc;
+}
+
+/* ================================ start media and key fram for home page ======================== */
+
+@keyframes show {
+    0% {
+        opacity: 0;
+        transform: scale(0.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 776px) {
+    header .carousel-inner .carousel-item h1 {
+        font-size: 35px;
+    }
+    header .carousel-inner .carousel-item p {
+        font-size: 14px;
+    }
+    header.carousel-inner .carousel-item a {
+        padding: 7px 17px;
+    }
+    header .carousel .arrow {
+        display: none;
+    }
+}
+
+/* ================================ end media and key fram for home page ======================== */
+
+/* ================================================================ start navbar ==================================================== */
+
+.navbar {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.navbar .logo {
+    background-image: url(../imgs/logo-light.png);
+    background-size: 100% 100%;
+    background-position: center center;
+    height: 100%;
+    width: 10%;
+    margin-left: 10px;
+}
+
+.navbar .navbar-toggler {
+    position: relative;
+    border: none;
+}
+
+.social::before {
+    content: "";
+    width: 1px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    top: 0;
+    right: 17%;
+}
+
+.navbar-nav .nav-item {
+    padding-right: 20px;
+    text-transform: capitalize;
+}
+
+.collapse {
+    justify-content: flex-end;
+}
+
+.social ul li a {
+    margin-left: 10px;
+    transition: all 0.2s ease-in-out;
+    color: #fff;
+    font-size: 17px;
+}
+
+.social ul li:hover a {
+    color: #ccc;
+}
+
+@media (max-width: 998px) {
+    .navbar {
+        padding: 0;
+        background-color: #fff !important;
+        color: #000;
+        padding: 10px;
+    }
+    .navbar .logo {
+        background-image: url(../imgs/logo-dark.png);
+    }
+    .social {
+        display: none;
+    }
+    .collapse {
+        background-color: #fff;
+        width: 100%;
+        margin: 0;
+    }
+    .navbar .navbar-toggler {
+        background-color: #000;
+    }
+    .navbar-dark .navbar-nav .nav-link {
+        color: #000;
+    }
+}
+
+/* =============================================================== start about section =================================================== */
+
+.about {
+    border-bottom: 1px solid rgb(158 154 154);
+    padding: 130px 0 !important;
+}
+
+.about .about-content h5 {
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.about .about-content p {
+    width: 50%;
+    font-size: 18px;
+    word-spacing: 1px;
+    font-weight: 300;
+    margin: 10px auto;
+    text-transform: capitalize;
+    position: relative;
+}
+
+.about .about-content a {
+    margin-top: 20px;
+    display: inline-block;
+    background-color: transparent;
+    color: #000;
+    transition: all 0.4s ease-in-out;
+}
+
+.about .about-content a:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.about .about-content p span {
+    position: relative;
+}
+
+.about .about-content p span::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 5px;
+    animation-name: typing-websites;
+    animation-duration: 1500ms;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    text-transform: lowercase;
+    color: #00c3da;
+    border-right: 1px solid #000;
+}
+
+/* ================================ start media and key fram for home page ======================== */
+
+@media (max-width: 768px) {
+    .about .about-content p {
+        width: 100%;
+    }
+}
+
+@keyframes typing-websites {
+    0% {
+        content: " ";
+    }
+    12.5% {
+        content: " w";
+    }
+    25% {
+        content: " we";
+    }
+    37.5% {
+        content: " web";
+    }
+    50% {
+        content: " webs";
+    }
+    62.5% {
+        content: " websi";
+    }
+    75% {
+        content: " websit";
+    }
+    87.5% {
+        content: " website";
+    }
+    100% {
+        content: " websites";
+    }
+}
+
+/* ================================ end media and key fram for home page ======================== */
+
+/* =============================================================== start team section =================================================== */
+
+.team {
+    padding: 60px 0;
+}
+
+.team-member {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.team .layer {
+    height: 85%;
+    width: 100%;
+    background-color: #00c3da;
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.team-member:hover .layer {
+    opacity: 0.85;
+    height: 100%;
+}
+
+.team .team-title h2 {
+    font-size: 40px;
+    font-weight: 900;
+    color: #e2e2e2;
+    position: relative;
+}
+.team .team-title p {
+    font-size: 20px;
+    color: #aaa;
+}
+
+@media (max-width: 768px) {
+    .team .team-title h2 {
+        font-size: 55px;
+    }
+    .team .team-title h2::after {
+        font-size: 35px;
+    }
+}
+
+/* =============================================================== end team section =================================================== */
+
+/* =============================================================== start services section =================================================== */
+
+.services {
+    padding: 40px 0;
+    background-color: #636363;
+}
+
+.services .services-icons .fas {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.services .services-icons span {
+    font-size: 14px;
+}
+
+.services .services-title {
+    color: #fff;
+}
+
+.services .services-title h2 {
+    font-size: 35px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.services ul {
+    margin-top: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.services ul li {
+    padding-top: 5px;
+    text-transform: capitalize;
+}
+
+/* ================================ start media for services section ======================== */
+
+@media (max-width: 992px) {
+    .services .container {
+        max-width: 90% !important;
+    }
+    .services .services-title h2 {
+        text-align: center;
+    }
+    .services .services-title h2::after {
+        transform: translate(-100px, 50px);
+    }
+    .services .services-title p {
+        text-align: center;
+    }
+    .services ul:last-of-type {
+        margin-top: 5px;
+    }
+}
+
+/* ================================ end media for services section ======================== */
+
+/* =============================================================== end services section =================================================== */
+
+/* =============================================================== start pricing section =================================================== */
+
+.pricing {
+    background-color: #eee;
+    padding: 80px 0;
+}
+
+.pricing-title h2 {
+    font-size: 100px;
+    font-weight: bold;
+    color: #d2d2d2;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.pricing .pricing-title h2::before {
+    content: "cheap prices";
+    font-size: 50px;
+    color: #000;
+    position: absolute;
+    transform: translate(-33%, 58px);
+    text-transform: capitalize;
+    font-weight: 800;
+}
+
+.pricing .package {
+    background-color: #fff;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.pricing .package:hover {
+    box-shadow: 0 0 40px 0 rgb(219, 218, 218);
+}
+
+.pricing .price h3 {
+    font-size: 35px;
+}
+
+.pricing .price h3::after {
+    content: "$";
+    position: absolute;
+    font-size: 20px;
+    top: -7px;
+    left: -14px;
+}
+
+.pricing .package ul::before {
+    content: "";
+    width: 65%;
+    position: absolute;
+    height: 1px;
+    margin-bottom: 29px;
+    background-color: #e4e1e1;
+}
+
+.pricing .package li {
+    padding-bottom: 20px;
+    color: #a5a4a4;
+}
+
+.pricing .package a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #00c3da;
+    padding: 10px 22px;
+    transition: all 0.5s ease-in-out;
+    display: inline-block;
+}
+
+.pricing .package a:hover {
+    transform: translateY(-3px);
+    opacity: 0.7;
+}
+
+.pricing .offer {
+    transform: scaleY(1.1);
+}
+
+.pricing .offer .price span {
+    position: absolute !important;
+    right: 0;
+    top: -50%;
+    background-color: #00c3da;
+    padding: 5px 10px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.pricing .offer .price h3 {
+    color: #00c3da;
+}
+
+@media (max-width: 992px) {
+    .pricing .package {
+        margin-top: 40px;
+    }
+    .pricing-title h2 {
+        font-size: 90px;
+    }
+    .pricing .pricing-title h2::before {
+        font-size: 35px;
+    }
+}
+
+/* =============================================================== end pricing section =================================================== */
+
+/* =============================================================== start testimonials section ============================================ */
+
+.testimonials {
+    background-color: #ccc;
+}
+
+.testimonials .carousel-inner {
+    padding: 60px;
+}
+
+.testimonials .carousel-indicators li {
+    width: 12px;
+    height: 12px;
+    background-color: #00c3da;
+    border-radius: 50%;
+}
+
+.testimonials .caption {
+    background-color: #fff;
+    width: 80%;
+    margin: 0 auto;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    border-radius: 10px;
+}
+
+.testimonials .caption .img {
+    position: relative;
+    width: 100%;
+}
+
+.testimonials .caption img {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -100px;
+    left: 43%;
+}
+
+.testimonials .carousel-indicators {
+    margin-bottom: 0;
+}
+
+/* =============================================================== start contact section ============================================ */
+
+.contact .contact-title h2 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #efecec;
+    margin-bottom: 25px;
+    position: relative;
+    text-transform: capitalize;
+}
+
+.contact .contact-title {
+    margin-left: 50px;
+}
+
+/* .contact .contact-title h2 {
+    content: "get in touch";
+    font-size: 50px;
+    color: #4e4b4b;
+    position: absolute;
+    transform: translate(-57px, 50px);
+    text-transform: capitalize;
+    font-weight: 800;
+} */
+
+.contact .contact-title p {
+    font-size: 20px;
+    color: #aaa;
+    font-weight: 300;
+}
+
+.contact .map {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.contact .map iframe {
+    width: 600px;
+    height: 700px;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 100px 0 5px;
+    width: 90%;
+    margin-left: 50px;
+    color: #aaa;
+}
+
+.contact form label {
+    color: #000;
+    text-transform: capitalize;
+    margin-top: 15px;
+}
+
+.contact form input {
+    border: 1px solid #aaa;
+    padding: 10px;
+}
+
+.contact form button {
+    margin-top: 20px;
+    border: none;
+    width: max-content;
+    background-color: #00c3da;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 992px) {
+    .contact .map {
+        width: 100%;
+        height: 400px;
+        margin: 0 auto;
+    }
+    .contact .map iframe {
+        width: 100%;
+        height: 100%;
+    }
+    .contact .contact-title h2 {
+        font-size: 85px;
+    }
+    .contact .contact-title h2::after {
+        font-size: 40px;
+    }
+    .contact form {
+        width: 100%;
+    }
+}
