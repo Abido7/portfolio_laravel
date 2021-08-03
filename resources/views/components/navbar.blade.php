@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top" dir="ltr">
     <div class="container">
         <div class="company">
             <a class="navbar-brand text-capitalize" href="{{ url('/') }}">{{ $company->name }}</a>
