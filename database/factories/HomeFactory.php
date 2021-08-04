@@ -34,8 +34,7 @@ class HomeFactory extends Factory
                 'ar' => $this->faker->text(100)
             ]),
             'img' => "home/$i.jpg",
-            'company_id' => 1
-
+            'company_id' => 1,
         ];
     }
 }

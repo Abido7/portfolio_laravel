@@ -1,0 +1,72 @@
+@extends('web.layout')
+
+@section('title')
+    register
+@endsection
+
+@section('content')
+
+
+    <!-- Contact -->
+    <div id="contact" class="section vh-100 bg-base">
+
+        <!-- container -->
+        <div class="container">
+
+            <!-- row -->
+            <div class="row">
+
+                <!-- login form -->
+                <div class="col-12">
+
+                    <div class=" vh-100 d-flex flex-column justify-content-center align-items-center">
+                        <h4 class="text-light">{{ __('web.signup') }}</h4>
+                        {{-- @include('admin.inc.msgs') --}}
+
+                        <form method="POST" action="{{ url('/register') }}" class="w-75">
+                            @csrf
+
+                            <input class="form-control my-2" type="text" name="name" placeholder="{{ __('web.name') }}">
+                            @error('name')
+                                <p class="lead text-danger p-0">
+                                    {{ $message }}
+                                </p>
+                            @enderror
+
+                            <input class="form-control my-2" type="email" name="email"
+                                placeholder="{{ __('web.email') }}">
+                            @error('email')
+                                <p class="lead text-danger p-0">
+                                    {{ $message }}
+                                </p>
+                            @enderror
+
+                            <input class="form-control my-2" type="password" name="password"
+                                placeholder="{{ __('web.password') }}">
+                            @error('password')
+                                <p class="lead text-danger p-0">
+                                    {{ $message }}
+                                </p>
+                            @enderror
+                            <input class="form-control my-2" type="password" name="password_confirmation"
+                                placeholder="{{ __('web.passConfirm') }}">
+                            @error('password_confirmation')
+                                <p class="lead text-danger p-0">
+                                    {{ $message }}
+                                </p>
+                            @enderror
+                            <button type="submit" class="btn btn-outline-primary mt-2">{{ __('web.signup') }}</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- /login form -->
+
+            </div>
+            <!-- /row -->
+
+        </div>
+        <!-- /container -->
+
+    </div>
+    <!-- /Contact -->
+@endsection

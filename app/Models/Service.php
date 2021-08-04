@@ -16,10 +16,13 @@ class Service extends Model
     {
         return $this->belongsTo(Company::class);
     }
+
+
     public function baseServices()
     {
         return $this->hasMany(BaseService::class);
     }
+
     public function deepServices()
     {
         return $this->hasMany(DeepService::class);

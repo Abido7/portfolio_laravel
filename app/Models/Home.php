@@ -13,9 +13,8 @@ class Home extends Model
 
     public function company()
     {
-        return $this->belongsTo(Home::class);
+        return $this->belongsTo(Company::class);
     }
-
 
     public function title($lang = null)
     {

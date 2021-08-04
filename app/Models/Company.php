@@ -10,32 +10,40 @@ class Company extends Model
     use HasFactory;
     protected $guarded = ['id', 'created_at', 'updated_at'];
 
-    public function user()
+    public function users()
     {
         return $this->hasMany(User::class);
     }
-    public function home()
+
+
+    public function homes()
     {
         return $this->hasMany(Home::class);
     }
-    public function abouts()
+
+
+    public function about()
     {
-        return $this->hasMany(About::class);
+        return $this->hasOne(About::class);
     }
-    public function services()
+
+    public function service()
     {
-        return $this->hasMany(Service::class);
+        return $this->hasOne(Service::class);
     }
+
     public function testimonials()
     {
         return $this->hasMany(Testimonial::class);
     }
+
     public function contacts()
     {
         return $this->hasMany(Contact::class);
     }
-    public function socials()
+
+    public function social()
     {
-        return $this->hasMany(Social::class);
+        return $this->hasOne(Social::class);
     }
 }

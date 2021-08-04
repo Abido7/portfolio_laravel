@@ -17,6 +17,14 @@ return [
     'contactTitle' => "Get In Touch",
     'contactBio' => "let's work together",
     'sendMessage' => "Send Message",
-    'testimonialsTitle' => 'Happy Customer'
-
+    'testimonialsTitle' => 'Happy Customer',
+    // =====================
+    'name' => "Name",
+    'email' => "Email",
+    'password' => "Password",
+    'passConfirm' => "Password Confirm",
+    "signup" => "Sign Up",
+    "logout" => "Logout",
+    "login" => "Login",
+    "verif" => "Verify Email To Continue"
 ];
